@@ -1,0 +1,39 @@
+1 Typora 基础使用
+
+1.1 指令使用
+
+  操作名      	快捷键                            	其它实现   
+  标题       	CTRL+数字键                       	       
+  下划线      	CTRL+u                         	       
+  删除线      	alt+shift+5                    	       
+  字体加粗     	CTRL+b                         	       
+  字体倾斜     	CTRL+i                         	       
+  无序列表     	- + space + enter              	       
+  有序列表     	数字键+space+enter                	       
+  引用       	> + space + enter              	       
+  插入链接     	CTRL+k                         	       
+  插入图片     	CTRL+shift+i                   	拖拽到md文件
+  插入代码块    	CTRL+shift+f                   	       
+  跳转到文章开头  	CTRL+home                      	       
+  跳转到文章末尾  	CTRL+end                       	       
+  选中英文单词/中文	CTRL+d /ctrl + shif left/right 	       
+  按行选中     	CTRL+1                         	       
+  快速搜索     	CTRL+f                         	       
+  替换       	CTRL+h                         	       
+  快速生成表格   	CTRL+t                         	       
+  快速打开笔记   	CTRL+p                         	       
+  快速生成目录   	[toc] + enter                  	       
+  着重关键字    	ctrl + shift + 反引号键（tab 键上面那个键）	       
+  新建文件     	ctrl + n                       	       
+  显示和隐藏侧边栏 	ctrl + shift + l               	       
+  全屏切换     	f11                            	       
+  分割线      	--- + enter                    	       
+  高亮显示     	文字                             	       
+  段落快捷键    	ctrl + 0                       	       
+  定义脚注     	文字脚注                           	       
+  文件导出格式   	html 和 pdf                     	       
+  插入公式     	$$ 公式                          	       
+  分隔符      	                               	       
+  代码块      	```                            	       
+
+
