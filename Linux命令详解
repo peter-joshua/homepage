@@ -1,0 +1,50 @@
+在linux里，source、sh、bash、./都可以执行shell script文件，那它们有什么不同吗？
+1、source
+source a.sh
+在当前shell内去读取、执行a.sh，而a.sh不需要有"执行权限"
+source命令可以简写为"."
+. a.sh
+注意：中间是有空格的。
+ 
+2、sh/bash
+sh a.sh
+bash a.sh
+都是打开一个subshell去读取、执行a.sh，而a.sh不需要有"执行权限"
+通常在subshell里运行的脚本里设置变量，不会影响到父shell的。
+ 
+3、./
+./a.sh
+#bash: ./a.sh: 权限不够
+chmod +x a.sh
+./a.sh
+打开一个subshell去读取、执行a.sh，但a.sh需要有"执行权限"
+可以用chmod +x添加执行权限
+ 
+4、fork、source、exec
+•	使用fork方式运行script时， 就是让shell(parent process)产生一个child process去执行该script，当child process结束后，会返回parent process，但parent process的环境是不会因child process的改变而改变的。
+•	使用source方式运行script时， 就是让script在当前process内执行， 而不是产生一个child process来执行。由于所有执行结果均于当前process内完成，若script的环境有所改变， 当然也会改变当前process环境了。
+•	使用exec方式运行script时， 它和source一样，也是让script在当前process内执行，但是process内的原代码剩下部分将被终止。同样，process内的环境随script改变而改变。
+通常如果我们执行时，都是默认为fork的。
+
+Set命令
+set指令能设置所使用shell的执行方式，可依照不同的需求来做设置。
+•	-a 　标示已修改的变量，以供输出至环境变量。
+•	-b 　使被中止的后台程序立刻回报执行状态。
+•	-C 　转向所产生的文件无法覆盖已存在的文件。
+•	-d 　Shell预设会用杂凑表记忆使用过的指令，以加速指令的执行。使用-d参数可取消。
+•	-e 　若指令传回值不等于0，则立即退出shell。
+•	-f　 　取消使用通配符。
+•	-h 　自动记录函数的所在位置。
+•	-H Shell 　可利用"!"加<指令编号>的方式来执行history中记录的指令。
+•	-k 　指令所给的参数都会被视为此指令的环境变量。
+•	-l 　记录for循环的变量名称。
+•	-m 　使用监视模式。
+•	-n 　只读取指令，而不实际执行。
+•	-p 　启动优先顺序模式。
+•	-P 　启动-P参数后，执行指令时，会以实际的文件或目录来取代符号连接。
+•	-t 　执行完随后的指令，即退出shell。
+•	-u 　当执行时使用到未定义过的变量，则显示错误信息。
+•	-v 　显示shell所读取的输入值。
+•	-x 　执行指令后，会先显示该指令及所下的参数。
+•	+<参数> 　取消某个set曾启动的参数。
+
